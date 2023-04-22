@@ -31,3 +31,25 @@ void print_board(const Board& board) {
         }
     }
 }
+
+// Check if a value is valid for a given cell
+bool is_valid(const Board& board, int row, int col, int value) {
+    // Check row and column
+    for (int i = 0; i < BOARD_SIZE; i++) {
+        if (board[row][i] == value || board[i][col] == value) {
+            return false;
+        }
+    }
+    // Check subgrid
+    int subgrid_row = (row / SUBGRID_SIZE) * SUBGRID_SIZE;
+    int subgrid_col = (col / SUBGRID_SIZE) * SUBGRID_SIZE;
+    for (int i = 0; i < SUBGRID_SIZE; i++) {
+        for (int j = 0; j < SUBGRID_SIZE; j++) {
+            if (board[subgrid_row + i][subgrid_col + j] == value) {
+                return false;
+            }
+        }
+    }
+    // If all checks passed, the value is valid
+    return true;
+}
