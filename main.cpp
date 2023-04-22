@@ -14,7 +14,7 @@ const int SUBGRID_SIZE = 3;
 const int EMPTY = 0;
 
 // Define the board type
-typedef vector<vector<int>> Board;
+typedef vector<vector<int> > Board;
 
 // Print the Sudoku board to the console
 void print_board(const Board& board) {
@@ -89,4 +89,39 @@ bool solve_board(Board& board) {
 }
 
 // Generate a random Sudoku board
-void generate_board(Board& board)
+void generate_board(Board& board) {
+    // Create a random number generator
+    unsigned seed = chrono::system_clock::now().time_since_epoch().count();
+    default_random_engine rng(seed);
+    // Fill the board with empty cells
+    for (int i = 0; i < BOARD_SIZE; i++) {
+        vector<int> row(BOARD_SIZE, EMPTY);
+        board.push_back(row);
+    }
+    // Fill each subgrid with random values
+    for (int subgrid_row = 0; subgrid_row < BOARD_SIZE; subgrid_row += SUBGRID_SIZE) {
+        for (int subgrid_col = 0; subgrid_col < BOARD_SIZE; subgrid_col += SUBGRID_SIZE) {
+            vector<int> values(BOARD_SIZE);
+            for (int i = 0; i < BOARD_SIZE; i++) {
+                values[i] = i + 1;
+            }
+            shuffle(values.begin(), values.end(), rng);
+            int index = 0;
+            for (int row = subgrid_row; row < subgrid_row + SUBGRID_SIZE; row++) {
+                for (int col = subgrid_col; col < subgrid_col + SUBGRID_SIZE; col++) {
+                    board[row][col] = values[index];
+                    index++;
+                }
+            }
+        }
+    }
+    // Solve the board to make sure it is valid
+    solve_board(board);
+}
+
+int main() {
+    Board board;
+    generate_board(board);
+    print_board(board);
+    return 0;
+}
