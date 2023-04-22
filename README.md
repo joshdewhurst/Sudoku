@@ -20,7 +20,3 @@ g++ sudoku_solver.cpp -o sudoku_solver
 
 2. The program will generate a random Sudoku board and solve it.
 3. The solved board will be printed to the console.
-
-## Contributing
-
-Contributions are welcome! Please create a pull request with any changes you would like to make.
