@@ -1,6 +1,6 @@
 # Sudoku Solver
 
-This is a C++ program that generates a random Sudoku board and solves it using backtracking.
+This is a C++ program that generates and solves Sudoku puzzles using backtracking. The program generates a random Sudoku board, solves it using the backtracking algorithm, and prints the solution to the console.
 
 ## Installation
 
