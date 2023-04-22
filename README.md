@@ -1,37 +1,26 @@
-# Sudoku
+# Sudoku Solver
 
-This repository contains a simple C++ program for generating and solving Sudoku puzzles using backtracking. The program generates a random Sudoku board and then solves it using recursive backtracking.
+This is a C++ program that generates a random Sudoku board and solves it using backtracking.
 
-#Installation
-To clone the repository and compile the code in a terminal, follow these steps:
+## Installation
 
-Open a terminal window
+1. Clone the repository to your local machine:
 
-Clone the repository by running the following command:
+git clone https://github.com/joshdewhurst/sudoku.git
 
-bash
-Copy code
-git clone https://github.com/yourusername/sudoku-solver.git
-Replace yourusername with your GitHub username.
+2. Open a terminal and navigate to the directory containing the cloned repository.
+3. Compile the program using the following command:
 
-Change into the sudoku-solver directory:
+g++ sudoku_solver.cpp -o sudoku_solver
 
-bash
-Copy code
-cd sudoku-solver
-Compile the code by running the following command:
+## Usage
 
-Copy code
-g++ sudoku.cpp -o sudoku
-Run the program by running the following command:
-
-bash
-Copy code
+1. Run the program using the following command:
 ./sudoku
-Usage
-When you run the program, it will generate a random Sudoku board and then solve it. The solved board will be printed to the console.
 
-You can modify the size of the board and the size of the subgrids by changing the values of BOARD_SIZE and SUBGRID_SIZE, respectively, in the code.
+2. The program will generate a random Sudoku board and solve it.
+3. The solved board will be printed to the console.
 
-Credits
-This program was written by [Your Name]. It is based on the recursive backtracking algorithm for solving Sudoku puzzles.
+## Contributing
+
+Contributions are welcome! Please create a pull request with any changes you would like to make.
