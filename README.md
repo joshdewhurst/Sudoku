@@ -11,7 +11,7 @@ This is a C++ program that generates and solves Sudoku puzzles using backtrackin
 2. Open a terminal and navigate to the directory containing the cloned repository.
 3. Compile the program using the following command:
 
-`g++ sudoku_solver.cpp -o sudoku_solver`
+`g++ main.cpp -o sudoku`
 
 ## Usage
 
